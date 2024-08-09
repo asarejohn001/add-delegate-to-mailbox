@@ -26,7 +26,7 @@ foreach ($user in $users) {
     Write-Host "Adding permissions for delegate: $delegateUserID on mailbox: $currentUserID"
 
     # Add mailbox permissions (example: Full Access)
-    Add-MailboxPermission -Identity $currentUserID -User $delegateUserID -AccessRights FullAccess -InheritanceType All -AutoMapping $false
+    Add-MailboxPermission -Identity $currentUserID -User $delegateUserID -AccessRights FullAccess -InheritanceType All
 
     # Add 'Send As' permission
     Add-RecipientPermission -Identity $currentUserID -Trustee $delegateUserID -AccessRights SendAs -Confirm:$false
