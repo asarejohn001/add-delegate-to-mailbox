@@ -28,8 +28,10 @@ foreach ($user in $users) {
     # Add mailbox permissions (example: Full Access)
     Add-MailboxPermission -Identity $currentUserID -User $delegateUserID -AccessRights FullAccess -InheritanceType All -AutoMapping $false
 
+    # Add 'Send As' permission
+    Add-RecipientPermission -Identity $currentUserID -Trustee $delegateUserID -AccessRights SendAs -Confirm:$false
+
     # Add additional permissions as needed, for example (uncomment below line of code to use them):
-    # Add-MailboxPermission -Identity $currentUserID -User $delegateUserID -AccessRights SendAs -InheritanceType All
     # Add-MailboxPermission -Identity $currentUserID -User $delegateUserID -AccessRights ReadPermission -InheritanceType All
 
 }
