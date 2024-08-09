@@ -8,5 +8,5 @@ The add-delegate-to-mailbox.ps1 script will
 1. Import the ExchangeOnlineManagement module and connect to your EXO environment. It show open your default browser to the EXO sign-in URl.
 2. Set a variable for the users from your CSV file.
 > [!IMPORTANT]
-> Ch
-3. Loop through
+> Change the variable and also make sure the heading of your csv file matches the variables in the script.
+3. Loop through the CSV file and add users from the DelegateUserID column to mailboxes on the CurrentUserID from the CSV file.
